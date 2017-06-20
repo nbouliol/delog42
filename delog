@@ -1,0 +1,8 @@
+#! /bin/sh
+while [ 1 ] 
+do 
+	sleep 10 
+	caffeinate -u -t 10 
+	python -c 'import Quartz ; Quartz.CGEventPost(0, Quartz.CGEventCreateKeyboardEvent(None, 0x0F, True)) ; Quartz.CGEventPost(0, Quartz.CGEventCreateKeyboardEvent(None, 0x0F, False)) ; Quartz.CGEventPost(0, Quartz.CGEventCreateKeyboardEvent(None, 0x33, True)) ; Quartz.CGEventPost(0, Quartz.CGEventCreateKeyboardEvent(None, 0x33, False))' 
+done
+
